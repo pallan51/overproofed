@@ -1,0 +1,199 @@
+:root {
+    /* Colors extracted and refined from the uploaded image for maximum accessibility and vibe */
+    --brand-dark: #7B1B15; /* Deep, rich red from the logo text */
+    --brand-light: #FBF8F3; /* Warm cream background */
+    --brand-accent: #9A241E; /* Lighter red for hover states */
+    --text-color: #5A120E; /* Darker red for secondary text */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--brand-light);
+    color: var(--brand-dark);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+/* Background decorations to add modern visual interest */
+.decor-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(123, 27, 21, 0.04) 0%, rgba(123, 27, 21, 0) 70%);
+    z-index: 0;
+}
+.top-left {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -200px;
+}
+.bottom-right {
+    width: 800px;
+    height: 800px;
+    bottom: -300px;
+    right: -200px;
+}
+
+/* Glassmorphism style card container */
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(123, 27, 21, 0.1);
+    border-radius: 30px;
+    padding: 2.5rem 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 25px 50px -12px rgba(123, 27, 21, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo-wrapper {
+    margin-bottom: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(123, 27, 21, 0.08));
+    animation: floating 4s ease-in-out infinite, fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Screen reader only class for SEO */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Elegant Location & Delivery Badge */
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--brand-dark);
+    margin-bottom: 2.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    background: rgba(123, 27, 21, 0.04);
+    border: 1px solid rgba(123, 27, 21, 0.08);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.location-badge i {
+    color: var(--brand-accent);
+    font-size: 1rem;
+}
+
+/* Contact styling */
+.contact-wrapper {
+    margin-bottom: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-img {
+    max-width: 85%;
+    height: auto;
+    object-fit: contain;
+    /* subtle styling so it blends perfectly yet stands out */
+    opacity: 0.95;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.contact-img:hover {
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+/* Fun subtle floating animation for logo */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Buy Button - High Emphasis */
+.buy-btn {
+    display: inline-block;
+    padding: 1.25rem 3.5rem;
+    background-color: var(--brand-dark);
+    color: var(--brand-light);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 30px -10px rgba(123, 27, 21, 0.4);
+    width: 65%;
+}
+
+.buy-btn:hover {
+    background-color: var(--brand-accent);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 20px 40px -10px rgba(123, 27, 21, 0.5);
+}
+
+/* Entrance Animation */
+.animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 20px;
+    }
+    .logo-img {
+        max-width: 95%;
+    }
+    .contact-img {
+        max-width: 100%;
+    }
+    .buy-btn {
+        width: 100%;
+        padding: 1.25rem 2rem;
+    }
+}
