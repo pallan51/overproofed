@@ -4,15 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Overproofed - Rustic Sourdough bakery in Bangkok. Hand-crafted artisanal sourdough bread with delivery available across Bangkok. Order now!">
-    <meta name="keywords" content="sourdough, Bangkok, rustic bread, artisanal bakery, Overproofed, bread delivery">
+    <title>Overproofed | Best Artisan Sourdough Bakery in Bangkok, Thailand</title>
+    <meta name="description" content="Looking for the best artisan sourdough in Bangkok? Overproofed offers hand-crafted, naturally leavened rustic bread. Delivery available across Bangkok, Thailand. Order fresh sourdough today!">
+    <meta name="keywords" content="sourdough Bangkok, artisan bakery Bangkok, best sourdough Thailand, rustic bread, sourdough delivery Bangkok, Overproofed bakery, naturally leavened bread">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Overproofed Bakery">
     
-    <meta property="og:title" content="Overproofed | Rustic Sourdough in Bangkok">
-    <meta property="og:description" content="Artisanal, overproofed rustic sourdough bread made in Bangkok. Delivery arrangements available.">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:title" content="Overproofed | Artisan Sourdough Bakery in Bangkok">
+    <meta property="og:description" content="Hand-crafted, naturally leavened rustic sourdough bread made in Bangkok. Delivery arrangements available across the city.">
+    <meta property="og:image" content="https://overproofedbakery.blogspot.com/logo.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Overproofed | Artisan Sourdough Bakery in Bangkok">
+    <meta name="twitter:description" content="Hand-crafted, naturally leavened rustic sourdough bread made in Bangkok. Order yours today.">
+    <meta name="twitter:image" content="https://overproofedbakery.blogspot.com/logo.png">
 
-    <title>Overproofed | Rustic Sourdough Bangkok</title>
+    <!-- Schema.org JSON-LD for Local Business (Bakery) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Overproofed Bakery",
+      "image": "https://overproofedbakery.blogspot.com/logo.png",
+      "description": "Hand-crafted artisan sourdough bakery in Bangkok, Thailand offering naturally leavened fresh rustic bread delivery.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bangkok",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH"
+      },
+      "telephone": "+66845083142",
+      "servesCuisine": "Sourdough Bread, Baked Goods",
+      "priceRange": "$$",
+      "url": "https://overproofedbakery.blogspot.com/",
+      "sameAs": [
+        "https://www.instagram.com/overproofed.na/",
+        "https://overproofedbakery.blogspot.com/"
+      ]
+    }
+    </script>
     <!-- Modern geometric font matching the image aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for the icons -->
@@ -26,8 +59,8 @@
     <div class="decor-circle bottom-right"></div>
 
     <main class="card animate-fade-in">
-        <!-- Visually hidden header for SEO -->
-        <h1 class="sr-only">Overproofed: Rustic Sourdough Bakery in Bangkok</h1>
+        <!-- Visually hidden header for SEO keyword density -->
+        <h1 class="sr-only">Overproofed: The Best Artisan Sourdough Bakery in Bangkok, Thailand - Fresh Bread Delivery</h1>
 
         <div class="logo-wrapper">
             <img src="logo.png" alt="Overproofed: Rustic Sourdough" class="logo-img">
@@ -35,16 +68,101 @@
 
         <!-- Elegant Location & Delivery Info -->
         <div class="location-badge">
-            <i class="fa-solid fa-location-dot"></i> Bangkok &nbsp;|&nbsp; <i class="fa-solid fa-motorcycle"></i> Delivery Arranged
+            <i class="fa-solid fa-location-dot"></i> Bangkok &nbsp;|&nbsp; <i class="fa-solid fa-motorcycle"></i>
+            Delivery Arranged
         </div>
 
         <div class="contact-wrapper">
-            <img src="contact.png" alt="Overproofed Contact: 084-5083142 and Instagram @overproofed.na" class="contact-img">
+            <a href="https://www.instagram.com/overproofed.na/" target="_blank" rel="noopener noreferrer"
+                style="display: flex; justify-content: center;">
+                <img src="contact.png" alt="Overproofed Contact: 084-5083142 and Instagram @overproofed.na"
+                    class="contact-img">
+            </a>
         </div>
 
         <!-- Buy Action - URL to be added later -->
-        <a href="https://agriquery.com/listings/homemade-sourdough-bread~xvj2v1qv" class="buy-btn">Order Now</a>
+        <a href="https://agriquery.com/listings/ขนมปังซาวโดว์จากยีสต์ธรรมชาติ-traditional-authentic-sourdough~c08pa6vp"
+            class="buy-btn">Order Now</a>
     </main>
+
+    <!-- Blogger Feed Section -->
+    <section class="card animate-fade-in blogger-section"
+        style="animation-delay: 0.3s; padding-bottom: 2rem; width: 100%; max-width: 480px;">
+        <h2 class="blog-title"><i class="fa-solid fa-pen-nib"></i> Latest from the Oven</h2>
+
+        <div id="blogger-feed" class="blogger-feed">
+            <div class="loading-posts">Loading latest updates...</div>
+        </div>
+
+        <a href="https://overproofedbakery.blogspot.com/" target="_blank" rel="noopener noreferrer"
+            class="follow-btn">Visit Full Blog</a>
+    </section>
+
+    <script>
+        // Handle the Blogger JSONP response
+        function handleBloggerFeed(data) {
+            const container = document.getElementById('blogger-feed');
+            const entries = data.feed.entry || [];
+
+            container.innerHTML = '';
+
+            if (entries.length === 0) {
+                container.innerHTML = '<p class="ig-caption">No posts yet.</p>';
+                return;
+            }
+
+            entries.slice(0, 3).forEach(post => {
+                // Handle empty titles
+                const title = post.title.$t.trim() ? post.title.$t : 'Sourdough Update';
+                const publishedDate = new Date(post.published.$t).toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+
+                let postUrl = '#';
+                for (let i = 0; i < post.link.length; i++) {
+                    if (post.link[i].rel === 'alternate') {
+                        postUrl = post.link[i].href;
+                        break;
+                    }
+                }
+
+                // Parse content
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = post.content.$t;
+                const textContent = tempDiv.textContent || tempDiv.innerText || '';
+                const excerpt = textContent.length > 100 ? textContent.substring(0, 100) + '...' : textContent;
+
+                // Grab first image
+                const imgMatch = tempDiv.querySelector('img');
+                const imgHtml = imgMatch ? `<div class="blog-img-wrapper"><img src="${imgMatch.src}" alt="${title}"></div>` : '';
+
+                const articleHtml = `
+                    <article class="blog-post">
+                        <span class="blog-date">${publishedDate}</span>
+                        <h3 class="blog-post-title"><a href="${postUrl}" target="_blank">${title}</a></h3>
+                        ${imgHtml}
+                        <p class="blog-excerpt">${excerpt}</p>
+                        <a href="${postUrl}" target="_blank" class="read-more">Read post <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                `;
+
+                container.insertAdjacentHTML('beforeend', articleHtml);
+            });
+        }
+
+        // Load the feed via JSONP to bypass CORS (useful for local files)
+        const script = document.createElement('script');
+        script.src = 'https://overproofedbakery.blogspot.com/feeds/posts/default?alt=json-in-script&callback=handleBloggerFeed';
+        document.body.appendChild(script);
+
+        // Fallback error handling
+        setTimeout(() => {
+            const container = document.getElementById('blogger-feed');
+            if (container && container.innerHTML.includes('Loading latest updates...')) {
+                container.innerHTML = '<p class="ig-caption">Could not load posts. Please visit our blog directly.</p>';
+            }
+        }, 5000);
+    </script>
 </body>
 
 </html>

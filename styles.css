@@ -18,12 +18,13 @@ body {
     font-family: 'Outfit', sans-serif;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 3rem 1rem;
 }
 
 /* Background decorations to add modern visual interest */
@@ -196,4 +197,197 @@ body {
         width: 100%;
         padding: 1.25rem 2rem;
     }
+}
+
+/* Instagram Blog Section */
+.instagram-blog {
+    margin-top: 0;
+}
+.blog-title {
+    font-size: 1.5rem;
+    color: var(--brand-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.blog-title i {
+    color: var(--brand-accent);
+}
+
+.ig-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.ig-post {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    display: block;
+    box-shadow: 0 4px 6px rgba(123, 27, 21, 0.1);
+}
+
+.ig-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.ig-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(123, 27, 21, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ig-overlay i {
+    color: var(--brand-light);
+    font-size: 2rem;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ig-post:hover img {
+    transform: scale(1.05);
+}
+
+.ig-post:hover .ig-overlay {
+    opacity: 1;
+}
+
+.ig-post:hover .ig-overlay i {
+    transform: scale(1);
+}
+
+.ig-caption {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.follow-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: transparent;
+    color: var(--brand-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--brand-dark);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.follow-btn:hover {
+    background-color: var(--brand-dark);
+    color: var(--brand-light);
+}
+
+/* Blogger Feed Styles */
+.blogger-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.blog-post {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(123, 27, 21, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(123, 27, 21, 0.15);
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: var(--brand-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.blog-post-title {
+    font-size: 1.2rem;
+    color: var(--brand-dark);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.blog-post-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.blog-post-title a:hover {
+    text-decoration: underline;
+}
+
+.blog-img-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    max-height: 200px;
+}
+
+.blog-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--brand-accent);
+}
+
+.loading-posts {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    color: var(--brand-accent);
 }
